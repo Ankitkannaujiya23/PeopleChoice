@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState, useContext, useEffect } from "react";
-import DataProvider, {
-  AlertContext,
+import  {
   DataContext,
 } from "./contextAPI/DataProvider";
 import {

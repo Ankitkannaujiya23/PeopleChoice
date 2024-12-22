@@ -3,11 +3,8 @@ import { MdAddCircle } from "react-icons/md";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { DataContext } from "../../contextAPI/DataProvider";
 import { createPost, fileUpload } from "../../services/apiCalls";
-import NoImage from "../../assets/images/blogPost/fileUploading.jpg";
 import { getAccessToken } from "../../utilMethods/commonMethods";
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-import { ChevronDownIcon } from "@heroicons/react/16/solid";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { PhotoIcon } from "@heroicons/react/24/solid";
 
 const CreatePost = () => {
   const [BlogPost, setBlogPost] = useState({

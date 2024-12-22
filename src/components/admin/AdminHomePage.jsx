@@ -12,7 +12,6 @@ const AdminHomePage = () => {
 
   const [searchParams] = useSearchParams();
   let category = searchParams.get("category");
-  let navigate = useNavigate();
   console.log("cate", category);
 
   useEffect(() => {

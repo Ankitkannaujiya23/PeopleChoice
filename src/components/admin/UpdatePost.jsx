@@ -1,18 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { MdAddCircle } from "react-icons/md";
-import {
-  useLocation,
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { DataContext } from "../../contextAPI/DataProvider";
-import { createPost, fileUpload, updatePost } from "../../services/apiCalls";
-import NoImage from "../../assets/images/blogPost/fileUploading.jpg";
+import { fileUpload, updatePost } from "../../services/apiCalls";
 import { getAccessToken } from "../../utilMethods/commonMethods";
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-import { ChevronDownIcon } from "@heroicons/react/16/solid";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { PhotoIcon } from "@heroicons/react/24/solid";
 
 const UpdatePost = () => {
   const [BlogPost, setBlogPost] = useState({
@@ -24,7 +16,6 @@ const UpdatePost = () => {
     createdDate: new Date(),
   });
   const [File, setFile] = useState("");
-  const [searchParams] = useSearchParams();
   const { UserDetails } = useContext(DataContext);
   const [Image, setImage] = useState("");
   const [Error, setError] = useState({});
