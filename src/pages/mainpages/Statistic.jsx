@@ -17,7 +17,7 @@ const Statistic = () => {
                                 </div>
                                 <div className="text-box">
                                     <h2 className="title-font font-medium text-3xl text-gray-900">2.7K</h2>
-                                    <p className="leading-relaxed">Downloads</p>
+                                    <p className="leading-relaxed">Blog Post</p>
                                 </div>
                             </div>
                         </div>

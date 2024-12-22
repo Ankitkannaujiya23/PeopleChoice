@@ -1,19 +1,29 @@
-import React from 'react'
+import React from "react";
+import { addElipsis } from "../../../utilMethods/commonMethods";
+import { Link } from "react-router-dom";
 
-const PopularPostCard = () => {
+const PopularPostCard = ({ post }) => {
   return (
     <div>
-      <div className="flex items-center border-b-2">
-        <div className="img-sec ">
-        <img src={require('../../../assets/images/blogPost/noFile.jpg')} className='w-32 h-28' alt="blog image" />
-        </div>
-        <div className="text-sec">
-    <p className='text-gray-500'>there is date format</p>
-    <p className='text-gray-700'>This is Blog title and its main title skjdfhsjf skfhakjsfdhks sdjhfkjshfdkj</p>
-        </div>
+        <Link to={`/blogDetails/${post._id}`}>
+      <div className="flex items-center border-b-2 m-2 p-4">
+          <div className="img-sec ">
+            <img
+              src={post.image}
+              className="w-32 h-28 rounded-md"
+              alt="blog image"
+            />
+          </div>
+          <div className="text-sec mx-2">
+            <p className="text-gray-700 text-lg">
+              {addElipsis(post.title, 30)}
+            </p>
+            <p className="text-gray-500">{addElipsis(post.description, 30)}</p>
+          </div>
       </div>
+        </Link>
     </div>
-  )
-}
+  );
+};
 
-export default PopularPostCard
+export default PopularPostCard;
