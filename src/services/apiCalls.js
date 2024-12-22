@@ -1,8 +1,8 @@
 import axios from "axios";
 import { getAccessToken } from "../utilMethods/commonMethods.js";
 // Base URL
-export const baseURL = "http://localhost:5001";
-// export const baseURL = "https://peoplechoicebackend.onrender.com"
+// export const baseURL = "http://localhost:5001";
+export const baseURL = "https://peoplechoiceserver.onrender.com";
 
 let token = getAccessToken();
 // API Call for creating an user
