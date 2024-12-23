@@ -61,7 +61,7 @@ const Signup = () => {
           Message: data.message,
         });
         setShowAlert(true);
-        navigate("/login");
+        navigate("/dashboard");
       } else {
         setAlertData({
           IsShow: true,
@@ -95,17 +95,16 @@ const Signup = () => {
           <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
             <div className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0">
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                src={require("../../assets/images/homepage/signupCompress.jpg")}
                 className="w-full"
                 alt="Sample image"
               />
             </div>
             <div className="xl:px-20  xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
               <form>
-
-              <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+                <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
                   <p className="text-center font-semibold mx-4 mb-0">
-                  Create a New Account
+                    Create a New Account
                   </p>
                 </div>
 
@@ -155,7 +154,7 @@ const Signup = () => {
                   <p className="text-sm font-semibold mt-2 pt-1 mb-0">
                     have an account ?
                     <Link
-                      to="/login"
+                      to="/"
                       className="text-[#f53855] hover:text-red-400  transition duration-200 ease-in-out"
                     >
                       Login

@@ -1,8 +1,6 @@
 import "./App.css";
 import React, { useState, useContext, useEffect } from "react";
-import  {
-  DataContext,
-} from "./contextAPI/DataProvider";
+import { DataContext } from "./contextAPI/DataProvider";
 import {
   BrowserRouter as Router,
   Routes,
@@ -35,7 +33,7 @@ const PrivateRoute = ({ IsLoggedIn, ...props }) => {
       <Outlet />
     </>
   ) : (
-    <Navigate replace to="/login" />
+    <Navigate replace to="/" />
   );
 };
 
@@ -79,13 +77,13 @@ function App() {
           />
         )}
         <Routes>
-          <Route
-            path="/login"
-            element={<Login setIsLoggedIn={setIsLoggedIn} />}
-          />
+          <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
 
-          <Route path="/" element={<PrivateRoute IsLoggedIn={IsLoggedIn} />}>
-            <Route path="/" element={<HomePage />} />
+          <Route
+            path="/dashboard"
+            element={<PrivateRoute IsLoggedIn={IsLoggedIn} />}
+          >
+            <Route path="/dashboard" element={<HomePage />} />
           </Route>
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

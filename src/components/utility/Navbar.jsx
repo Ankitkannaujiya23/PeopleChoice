@@ -29,7 +29,7 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
   const handleLogout = () => {
     setIsLoggedIn(false);
     logout();
-    navigate("/login");
+    navigate("/");
   };
 
   return (
@@ -47,11 +47,13 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
           <ul className="  md:flex  lg:flex flex-wrap items-center md:text-sm lg:text-lg  text-black  space-x-8 cursor-pointer">
             <li
               className={`hover:text-[#f53855] transition cursor-pointer ml-4   ${
-                location.pathname === "/" ? "text-[#f53855] font-medium" : ""
+                location.pathname === "/dashboard"
+                  ? "text-[#f53855] font-medium"
+                  : ""
               }`}
             >
               {" "}
-              <Link to="/">Home</Link>
+              <Link to="/dashboard">Home</Link>
             </li>
             {IsLoggedIn && (
               <li
@@ -98,7 +100,7 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
               className="px-2 font-semibold cursor-pointer"
               onClick={() => handleLogout()}
             >
-              Hello {UserDetails?.name} , Logout 
+              Hello {UserDetails?.name} , Logout
             </button>
           ) : (
             <div>
@@ -112,11 +114,11 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
               </button>
               <button
                 className={`inline-block px-8 py-2   font-semibold text-md leading-snug outline outline-1  outline-[#f53855]  rounded-full hover:shadow-[0px_10px_40px_-10px_rgba(245,56,56,0.81)] hover:bg-[#f53855] hover:text-white  focus:shadow-lg  focus:ring-0  active:shadow-lg transition duration-150 ease-in-out ${
-                  location.pathname == "/login"
+                  location.pathname == "/"
                     ? "bg-[#f53855] text-white"
                     : "text-[#f53855]"
                 }`}
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/")}
               >
                 Sign In
               </button>
@@ -154,7 +156,9 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
             <ul className="items-center text-center    space-y-3 cursor-pointer mb-4">
               <li
                 className={`hover:text-[#f53855]-700 cursor-pointer ml-4 ${
-                  Active === "1" ? "text-[#f53855] font-medium" : ""
+                  location.pathname === "/dashboard"
+                    ? "text-[#f53855] font-medium"
+                    : ""
                 }`}
                 onClick={() => {
                   setActive("1");
@@ -162,11 +166,13 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
                 }}
               >
                 {" "}
-                <Link to="/">Home</Link>
+                <Link to="/dashboard">Home</Link>
               </li>
               <li
                 className={`hover:text-[#f53855] cursor-pointer transition-all  ${
-                  Active === "2" ? "text-[#f53855] font-medium" : ""
+                  location.pathname === "adminpanel"
+                    ? "text-[#f53855] font-medium"
+                    : ""
                 }`}
                 onClick={() => {
                   setActive("2");
@@ -188,7 +194,9 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
               </li>
               <li
                 className={`hover:text-[#f53855] cursor-pointer  ${
-                  Active === "4" ? "text-[#f53855] font-medium" : ""
+                  location.pathname === "/about"
+                    ? "text-[#f53855] font-medium"
+                    : ""
                 }`}
                 onClick={() => {
                   setActive("4");
@@ -199,7 +207,9 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
               </li>
               <li
                 className={`hover:text-[#f53855] cursor-pointer  ${
-                  Active === "5" ? "text-[#f53855] font-medium" : ""
+                  location.pathname === "/contact"
+                    ? "text-[#f53855] font-medium"
+                    : ""
                 }`}
                 onClick={() => {
                   setActive("5");
