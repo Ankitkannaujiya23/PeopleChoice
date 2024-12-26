@@ -24,7 +24,7 @@ const BlogHomePage = () => {
         `${category !== null ? category : ""}`,
         token
       );
-      console.log(response.data);
+      // console.log(response.data);
       setAllPost(response.data);
       setLoader(false);
     };
