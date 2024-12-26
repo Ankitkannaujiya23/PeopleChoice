@@ -44,13 +44,10 @@ const HomePage = () => {
           </div>
         </div>
         {/* <Statistic /> */}
-        <section
-          ref={targetSectionRef}
-          style={{ height: "100vh" }}
-        >
+        <section ref={targetSectionRef}>
           <BlogHomePage />
         </section>
-        <Features />
+        {/* <Features /> */}
         <Testimonials />
         <div className="price-sec bg-gradient-to-t from-white to-transparent -mb-24 pb-20">
           {/* <Pricing /> */}
